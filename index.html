@@ -21,9 +21,7 @@
       --card-bg: rgba(255, 255, 255, 0.94);
       --shadow: 0 14px 35px rgba(255, 77, 141, 0.18);
     }
-
     * { box-sizing: border-box; margin: 0; padding: 0; }
-
     body {
       font-family: 'Quicksand', sans-serif;
       color: var(--text);
@@ -32,50 +30,17 @@
       overflow-x: hidden;
       position: relative;
     }
-
     h1, h2, h3, .cute-font { font-family: 'Fredoka', sans-serif; }
-
-    .floating-bg {
-      position: fixed;
-      inset: 0;
-      pointer-events: none;
-      overflow: hidden;
-      z-index: 0;
-    }
-
-    .float-item {
-      position: absolute;
-      bottom: -50px;
-      animation: floatUp linear infinite;
-      opacity: 0.7;
-      user-select: none;
-    }
-
+    .floating-bg { position: fixed; inset: 0; pointer-events: none; overflow: hidden; z-index: 0; }
+    .float-item { position: absolute; bottom: -50px; animation: floatUp linear infinite; opacity: 0.7; user-select: none; }
     @keyframes floatUp {
       0% { transform: translateY(0) rotate(0deg) scale(0.9); opacity: 0; }
       15% { opacity: 0.75; }
       85% { opacity: 0.75; }
       100% { transform: translateY(-115vh) rotate(25deg) scale(1.15); opacity: 0; }
     }
-
-    #confettiCanvas {
-      position: fixed;
-      inset: 0;
-      pointer-events: none;
-      z-index: 2000;
-    }
-
-    /* PAGE 1 */
-    #page1 {
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 20px;
-      position: relative;
-      z-index: 2;
-    }
-
+    #confettiCanvas { position: fixed; inset: 0; pointer-events: none; z-index: 2000; }
+    #page1 { min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: 20px; position: relative; z-index: 2; }
     .love-card {
       background: var(--card-bg);
       border: 3px solid #fff;
@@ -88,66 +53,18 @@
       position: relative;
       animation: popIn 0.6s ease;
     }
-
-    @keyframes popIn {
-      0% { transform: scale(0.85); opacity: 0; }
-      100% { transform: scale(1); opacity: 1; }
-    }
-
-    .corner-sticker {
-      position: absolute;
-      font-size: 2rem;
-      animation: wiggle 3s ease-in-out infinite;
-      user-select: none;
-      pointer-events: none;
-    }
+    @keyframes popIn { 0% { transform: scale(0.85); opacity: 0; } 100% { transform: scale(1); opacity: 1; } }
+    .corner-sticker { position: absolute; font-size: 2rem; animation: wiggle 3s ease-in-out infinite; user-select: none; pointer-events: none; }
     .corner-sticker.tl { top: -18px; left: -12px; }
     .corner-sticker.tr { top: -18px; right: -12px; animation-delay: 0.5s; }
     .corner-sticker.bl { bottom: -16px; left: 16px; animation-delay: 1s; }
     .corner-sticker.br { bottom: -16px; right: 16px; animation-delay: 1.5s; }
-
-    @keyframes wiggle {
-      0%, 100% { transform: rotate(-8deg) scale(1); }
-      50% { transform: rotate(8deg) scale(1.12); }
-    }
-
-    .cute-bear-svg {
-      width: 130px;
-      height: 130px;
-      margin: 0 auto 14px;
-      display: block;
-      animation: bounceSoft 2.4s ease-in-out infinite;
-    }
-
-    @keyframes bounceSoft {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-8px); }
-    }
-
-    .love-question {
-      font-size: 2.2rem;
-      color: var(--pink-600);
-      margin-bottom: 10px;
-      line-height: 1.2;
-    }
-
-    .shy-hint {
-      min-height: 28px;
-      font-size: 1.05rem;
-      font-weight: 700;
-      color: var(--pink-500);
-      margin-bottom: 22px;
-    }
-
-    .btn-row {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 16px;
-      flex-wrap: wrap;
-      min-height: 75px;
-    }
-
+    @keyframes wiggle { 0%, 100% { transform: rotate(-8deg) scale(1); } 50% { transform: rotate(8deg) scale(1.12); } }
+    .cute-bear-svg { width: 130px; height: 130px; margin: 0 auto 14px; display: block; animation: bounceSoft 2.4s ease-in-out infinite; }
+    @keyframes bounceSoft { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
+    .love-question { font-size: 2.2rem; color: var(--pink-600); margin-bottom: 10px; line-height: 1.2; }
+    .shy-hint { min-height: 28px; font-size: 1.05rem; font-weight: 700; color: var(--pink-500); margin-bottom: 22px; }
+    .btn-row { display: flex; align-items: center; justify-content: center; gap: 16px; flex-wrap: wrap; min-height: 75px; }
     .btn-yes {
       background: linear-gradient(135deg, #ff4d8d, #ff7eb3);
       color: #fff;
@@ -168,7 +85,6 @@
       z-index: 10;
       -webkit-tap-highlight-color: transparent;
     }
-
     .btn-yes.fullscreen-yes {
       position: fixed !important;
       inset: 0 !important;
@@ -180,12 +96,10 @@
       padding: 30px !important;
       animation: pulseBg 2s infinite alternate;
     }
-
     @keyframes pulseBg {
       from { background: linear-gradient(135deg, #ff4d8d, #ff85b3); }
       to { background: linear-gradient(135deg, #ff3377, #ff66a3); }
     }
-
     .fullscreen-subtext {
       font-size: clamp(1.3rem, 3.8vw, 2.2rem);
       font-weight: 600;
@@ -194,13 +108,7 @@
       border-radius: 999px;
       border: 2px dashed rgba(255, 255, 255, 0.8);
     }
-
-    .fullscreen-tap {
-      font-size: clamp(1rem, 2.5vw, 1.3rem);
-      opacity: 0.92;
-      margin-top: 6px;
-    }
-
+    .fullscreen-tap { font-size: clamp(1rem, 2.5vw, 1.3rem); opacity: 0.92; margin-top: 6px; }
     .btn-no {
       background: #fff;
       color: var(--muted);
@@ -217,402 +125,76 @@
       user-select: none;
       -webkit-tap-highlight-color: transparent;
     }
-
-    /* PAGE 2 */
-    #page2 {
-      display: none;
-      position: relative;
-      z-index: 2;
-      max-width: 1050px;
-      margin: 0 auto;
-      padding: 32px 18px 90px;
-      animation: fadeSlideUp 0.7s ease;
-    }
-
-    @keyframes fadeSlideUp {
-      from { opacity: 0; transform: translateY(25px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    .section-card {
-      background: var(--card-bg);
-      border: 3px solid #fff;
-      border-radius: 30px;
-      padding: 28px 24px;
-      margin-bottom: 26px;
-      box-shadow: var(--shadow);
-      position: relative;
-    }
-
-    .hero-banner {
-      text-align: center;
-      padding: 38px 24px;
-      background: linear-gradient(135deg, rgba(255, 214, 231, 0.95), rgba(243, 232, 255, 0.95));
-    }
-
-    .hero-badge {
-      display: inline-block;
-      background: #fff;
-      color: var(--pink-600);
-      padding: 6px 18px;
-      border-radius: 999px;
-      font-weight: 700;
-      font-size: 0.95rem;
-      margin-bottom: 14px;
-    }
-
-    .hero-title {
-      font-size: clamp(2rem, 5vw, 3.2rem);
-      color: var(--pink-600);
-      margin-bottom: 10px;
-    }
-
-    .hero-subtitle {
-      font-size: 1.15rem;
-      max-width: 650px;
-      margin: 0 auto 18px;
-      font-weight: 600;
-    }
-
-    .sticker-parade {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-top: 12px;
-    }
-
-    .sticker-pill {
-      font-size: 1.7rem;
-      background: #fff;
-      width: 48px;
-      height: 48px;
-      border-radius: 16px;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      box-shadow: 0 5px 14px rgba(255, 77, 141, 0.15);
-      cursor: pointer;
-      transition: transform 0.2s ease;
-      user-select: none;
-    }
-
+    #page2 { display: none; position: relative; z-index: 2; max-width: 1050px; margin: 0 auto; padding: 32px 18px 90px; animation: fadeSlideUp 0.7s ease; }
+    @keyframes fadeSlideUp { from { opacity: 0; transform: translateY(25px); } to { opacity: 1; transform: translateY(0); } }
+    .section-card { background: var(--card-bg); border: 3px solid #fff; border-radius: 30px; padding: 28px 24px; margin-bottom: 26px; box-shadow: var(--shadow); position: relative; }
+    .hero-banner { text-align: center; padding: 38px 24px; background: linear-gradient(135deg, rgba(255, 214, 231, 0.95), rgba(243, 232, 255, 0.95)); }
+    .hero-badge { display: inline-block; background: #fff; color: var(--pink-600); padding: 6px 18px; border-radius: 999px; font-weight: 700; font-size: 0.95rem; margin-bottom: 14px; }
+    .hero-title { font-size: clamp(2rem, 5vw, 3.2rem); color: var(--pink-600); margin-bottom: 10px; }
+    .hero-subtitle { font-size: 1.15rem; max-width: 650px; margin: 0 auto 18px; font-weight: 600; }
+    .sticker-parade { display: flex; justify-content: center; flex-wrap: wrap; gap: 10px; margin-top: 12px; }
+    .sticker-pill { font-size: 1.7rem; background: #fff; width: 48px; height: 48px; border-radius: 16px; display: inline-flex; align-items: center; justify-content: center; box-shadow: 0 5px 14px rgba(255, 77, 141, 0.15); cursor: pointer; transition: transform 0.2s ease; user-select: none; }
     .sticker-pill:hover { transform: scale(1.2) rotate(8deg); }
-
     .countdown-title { text-align: center; font-size: 1.65rem; color: var(--pink-600); margin-bottom: 6px; }
     .countdown-sub { text-align: center; font-size: 0.98rem; color: var(--muted); font-weight: 600; margin-bottom: 20px; }
-
-    .timer-grid {
-      display: grid;
-      grid-template-columns: repeat(4, minmax(70px, 145px));
-      justify-content: center;
-      gap: 14px;
-    }
-
-    .time-box {
-      background: linear-gradient(180deg, #fff, #fff0f6);
-      border: 2px solid var(--pink-200);
-      border-radius: 22px;
-      padding: 16px 10px;
-      text-align: center;
-    }
-
-    .time-num {
-      font-family: 'Fredoka', sans-serif;
-      font-size: clamp(1.8rem, 4vw, 2.7rem);
-      color: var(--pink-600);
-    }
-
-    .time-label {
-      font-size: 0.85rem;
-      font-weight: 700;
-      color: var(--muted);
-      text-transform: uppercase;
-      margin-top: 4px;
-    }
-
-    .birthday-live-msg {
-      display: none;
-      text-align: center;
-      font-family: 'Fredoka', sans-serif;
-      font-size: 1.8rem;
-      color: var(--pink-600);
-      padding: 16px;
-      background: #fff0f6;
-      border-radius: 20px;
-      border: 2px dashed var(--pink-500);
-    }
-
-    .letter-box {
-      background: linear-gradient(135deg, #fff, #fff7fb);
-      border: 2px dashed var(--pink-300);
-      border-radius: 24px;
-      padding: 24px;
-      font-size: 1.12rem;
-      line-height: 1.75;
-      text-align: center;
-      font-weight: 600;
-      white-space: pre-wrap;
-    }
-
-    .section-header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-bottom: 18px;
-    }
-
+    .timer-grid { display: grid; grid-template-columns: repeat(4, minmax(70px, 145px)); justify-content: center; gap: 14px; }
+    .time-box { background: linear-gradient(180deg, #fff, #fff0f6); border: 2px solid var(--pink-200); border-radius: 22px; padding: 16px 10px; text-align: center; }
+    .time-num { font-family: 'Fredoka', sans-serif; font-size: clamp(1.8rem, 4vw, 2.7rem); color: var(--pink-600); }
+    .time-label { font-size: 0.85rem; font-weight: 700; color: var(--muted); text-transform: uppercase; margin-top: 4px; }
+    .birthday-live-msg { display: none; text-align: center; font-family: 'Fredoka', sans-serif; font-size: 1.8rem; color: var(--pink-600); padding: 16px; background: #fff0f6; border-radius: 20px; border: 2px dashed var(--pink-500); }
+    .letter-box { background: linear-gradient(135deg, #fff, #fff7fb); border: 2px dashed var(--pink-300); border-radius: 24px; padding: 24px; font-size: 1.12rem; line-height: 1.75; text-align: center; font-weight: 600; white-space: pre-wrap; }
+    .section-header { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px; margin-bottom: 18px; }
     .section-title { font-size: 1.7rem; color: var(--pink-600); display: flex; align-items: center; gap: 10px; }
-
-    .count-badge {
-      background: var(--pink-100);
-      color: var(--pink-600);
-      border: 1.5px solid var(--pink-300);
-      border-radius: 999px;
-      padding: 4px 14px;
-      font-size: 0.9rem;
-      font-weight: 700;
-    }
-
-    .wishes-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-      gap: 16px;
-    }
-
-    .wish-card {
-      background: #fff;
-      border-radius: 22px;
-      padding: 20px;
-      border: 2px solid var(--pink-100);
-      box-shadow: 0 8px 20px rgba(255, 77, 141, 0.08);
-    }
-
+    .count-badge { background: var(--pink-100); color: var(--pink-600); border: 1.5px solid var(--pink-300); border-radius: 999px; padding: 4px 14px; font-size: 0.9rem; font-weight: 700; }
+    .wishes-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 16px; }
+    .wish-card { background: #fff; border-radius: 22px; padding: 20px; border: 2px solid var(--pink-100); box-shadow: 0 8px 20px rgba(255, 77, 141, 0.08); }
     .wish-sticker { font-size: 2rem; margin-bottom: 8px; display: inline-block; }
     .wish-text { font-size: 1.03rem; line-height: 1.6; font-weight: 600; margin-bottom: 12px; white-space: pre-wrap; }
     .wish-author { font-size: 0.9rem; font-weight: 700; color: var(--pink-500); }
-
-    .folder-wrapper {
-      background: linear-gradient(180deg, #fff5fa, #ffffff);
-      border: 2px solid var(--pink-200);
-      border-radius: 24px;
-      padding: 20px;
-    }
-
-    .folder-tab-header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      cursor: pointer;
-      padding-bottom: 14px;
-      border-bottom: 2px dashed var(--pink-200);
-      margin-bottom: 18px;
-      user-select: none;
-    }
-
-    .folder-tab-left {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      font-family: 'Fredoka', sans-serif;
-      font-size: 1.35rem;
-      color: var(--pink-600);
-    }
-
-    .videos-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
-      gap: 18px;
-    }
-
-    .video-card {
-      background: #fff;
-      border-radius: 20px;
-      overflow: hidden;
-      border: 2px solid var(--pink-100);
-      box-shadow: 0 8px 20px rgba(255, 77, 141, 0.1);
-    }
-
+    .folder-wrapper { background: linear-gradient(180deg, #fff5fa, #ffffff); border: 2px solid var(--pink-200); border-radius: 24px; padding: 20px; }
+    .folder-tab-header { display: flex; align-items: center; justify-content: space-between; cursor: pointer; padding-bottom: 14px; border-bottom: 2px dashed var(--pink-200); margin-bottom: 18px; user-select: none; }
+    .folder-tab-left { display: flex; align-items: center; gap: 12px; font-family: 'Fredoka', sans-serif; font-size: 1.35rem; color: var(--pink-600); }
+    .videos-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(290px, 1fr)); gap: 18px; }
+    .video-card { background: #fff; border-radius: 20px; overflow: hidden; border: 2px solid var(--pink-100); box-shadow: 0 8px 20px rgba(255, 77, 141, 0.1); }
     .video-card video { width: 100%; max-height: 260px; background: #1a0d14; display: block; }
     .video-info { padding: 14px 16px; }
     .video-title { font-family: 'Fredoka', sans-serif; font-size: 1.15rem; color: var(--pink-600); margin-bottom: 4px; }
     .video-caption { font-size: 0.95rem; color: var(--muted); font-weight: 600; }
     .empty-state { text-align: center; padding: 32px 16px; color: var(--muted); font-weight: 600; }
-
-    .admin-fab {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      z-index: 1200;
-      background: #fff;
-      color: var(--pink-600);
-      border: 2px solid var(--pink-300);
-      border-radius: 999px;
-      padding: 10px 18px;
-      font-family: 'Fredoka', sans-serif;
-      font-size: 0.98rem;
-      font-weight: 600;
-      cursor: pointer;
-      box-shadow: 0 8px 22px rgba(255, 77, 141, 0.25);
-    }
-
-    .modal-overlay {
-      position: fixed;
-      inset: 0;
-      background: rgba(65, 20, 44, 0.55);
-      display: none;
-      align-items: center;
-      justify-content: center;
-      padding: 16px;
-      z-index: 1500;
-    }
+    .admin-fab { position: fixed; bottom: 20px; right: 20px; z-index: 1200; background: #fff; color: var(--pink-600); border: 2px solid var(--pink-300); border-radius: 999px; padding: 10px 18px; font-family: 'Fredoka', sans-serif; font-size: 0.98rem; font-weight: 600; cursor: pointer; box-shadow: 0 8px 22px rgba(255, 77, 141, 0.25); }
+    .modal-overlay { position: fixed; inset: 0; background: rgba(65, 20, 44, 0.55); display: none; align-items: center; justify-content: center; padding: 16px; z-index: 1500; }
     .modal-overlay.open { display: flex; }
-
-    .modal-box {
-      background: #fff;
-      border-radius: 28px;
-      border: 3px solid var(--pink-200);
-      width: 100%;
-      max-width: 680px;
-      max-height: 90vh;
-      overflow-y: auto;
-      padding: 26px;
-      position: relative;
-    }
+    .modal-box { background: #fff; border-radius: 28px; border: 3px solid var(--pink-200); width: 100%; max-width: 680px; max-height: 90vh; overflow-y: auto; padding: 26px; position: relative; }
     .modal-box.small { max-width: 400px; text-align: center; }
-
-    .modal-close {
-      position: absolute;
-      top: 16px;
-      right: 16px;
-      background: var(--pink-100);
-      color: var(--pink-600);
-      border: none;
-      width: 36px;
-      height: 36px;
-      border-radius: 50%;
-      font-size: 1.2rem;
-      font-weight: 700;
-      cursor: pointer;
-    }
-
-    .admin-tabs {
-      display: flex;
-      gap: 8px;
-      flex-wrap: wrap;
-      margin: 16px 0 20px;
-      border-bottom: 2px solid var(--pink-100);
-      padding-bottom: 12px;
-    }
-
-    .tab-btn {
-      background: var(--pink-100);
-      color: var(--text);
-      border: none;
-      border-radius: 999px;
-      padding: 8px 16px;
-      font-family: 'Fredoka', sans-serif;
-      font-size: 0.95rem;
-      cursor: pointer;
-    }
+    .modal-close { position: absolute; top: 16px; right: 16px; background: var(--pink-100); color: var(--pink-600); border: none; width: 36px; height: 36px; border-radius: 50%; font-size: 1.2rem; font-weight: 700; cursor: pointer; }
+    .admin-tabs { display: flex; gap: 8px; flex-wrap: wrap; margin: 16px 0 20px; border-bottom: 2px solid var(--pink-100); padding-bottom: 12px; }
+    .tab-btn { background: var(--pink-100); color: var(--text); border: none; border-radius: 999px; padding: 8px 16px; font-family: 'Fredoka', sans-serif; font-size: 0.95rem; cursor: pointer; }
     .tab-btn.active { background: var(--pink-500); color: #fff; }
-
     .tab-pane { display: none; }
     .tab-pane.active { display: block; }
-
     .form-group { margin-bottom: 14px; text-align: left; }
     .form-group label { display: block; font-weight: 700; font-size: 0.92rem; margin-bottom: 5px; }
-
-    .form-control {
-      width: 100%;
-      padding: 11px 14px;
-      border: 2px solid var(--pink-200);
-      border-radius: 14px;
-      font-family: 'Quicksand', sans-serif;
-      font-size: 0.98rem;
-      font-weight: 600;
-      color: var(--text);
-      outline: none;
-    }
+    .form-control { width: 100%; padding: 11px 14px; border: 2px solid var(--pink-200); border-radius: 14px; font-family: 'Quicksand', sans-serif; font-size: 0.98rem; font-weight: 600; color: var(--text); outline: none; }
     .form-control:focus { border-color: var(--pink-500); }
     textarea.form-control { min-height: 85px; resize: vertical; }
-
-    .btn-primary {
-      background: linear-gradient(135deg, #ff4d8d, #ff7eb3);
-      color: #fff;
-      border: none;
-      border-radius: 14px;
-      padding: 11px 20px;
-      font-family: 'Fredoka', sans-serif;
-      font-size: 1rem;
-      cursor: pointer;
-    }
+    .btn-primary { background: linear-gradient(135deg, #ff4d8d, #ff7eb3); color: #fff; border: none; border-radius: 14px; padding: 11px 20px; font-family: 'Fredoka', sans-serif; font-size: 1rem; cursor: pointer; }
     .btn-primary:disabled { opacity: 0.6; cursor: not-allowed; }
-
-    .btn-secondary {
-      background: var(--pink-100);
-      color: var(--pink-600);
-      border: 1.5px solid var(--pink-300);
-      border-radius: 12px;
-      padding: 8px 14px;
-      font-family: 'Fredoka', sans-serif;
-      cursor: pointer;
-    }
-
-    .btn-danger {
-      background: #ffe3e3;
-      color: #d62828;
-      border: 1.5px solid #ffb3b3;
-      border-radius: 12px;
-      padding: 8px 14px;
-      font-family: 'Fredoka', sans-serif;
-      cursor: pointer;
-    }
-
-    .admin-item-card {
-      background: #fff8fb;
-      border: 1.5px solid var(--pink-200);
-      border-radius: 16px;
-      padding: 14px;
-      margin-bottom: 12px;
-    }
-
+    .btn-secondary { background: var(--pink-100); color: var(--pink-600); border: 1.5px solid var(--pink-300); border-radius: 12px; padding: 8px 14px; font-family: 'Fredoka', sans-serif; cursor: pointer; }
+    .btn-danger { background: #ffe3e3; color: #d62828; border: 1.5px solid #ffb3b3; border-radius: 12px; padding: 8px 14px; font-family: 'Fredoka', sans-serif; cursor: pointer; }
+    .admin-item-card { background: #fff8fb; border: 1.5px solid var(--pink-200); border-radius: 16px; padding: 14px; margin-bottom: 12px; }
     .admin-item-actions { display: flex; gap: 8px; margin-top: 10px; flex-wrap: wrap; }
-
-    .toast {
-      position: fixed;
-      top: 20px;
-      left: 50%;
-      transform: translateX(-50%) translateY(-20px);
-      background: #5a2a42;
-      color: #fff;
-      padding: 10px 22px;
-      border-radius: 999px;
-      font-weight: 700;
-      font-size: 0.95rem;
-      opacity: 0;
-      pointer-events: none;
-      transition: all 0.3s ease;
-      z-index: 3000;
-      text-align: center;
-      max-width: 90vw;
-    }
+    .toast { position: fixed; top: 20px; left: 50%; transform: translateX(-50%) translateY(-20px); background: #5a2a42; color: #fff; padding: 10px 22px; border-radius: 999px; font-weight: 700; font-size: 0.95rem; opacity: 0; pointer-events: none; transition: all 0.3s ease; z-index: 3000; text-align: center; max-width: 90vw; }
     .toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
-
     @media (max-width: 540px) {
       .timer-grid { grid-template-columns: repeat(2, 1fr); }
       .love-card { padding: 34px 20px; }
     }
   </style>
-</head>
-<body>
+</head><body>
   <div class="floating-bg" id="floatingBg"></div>
   <canvas id="confettiCanvas"></canvas>
   <div class="toast" id="toast"></div>
 
-  <!-- PAGE 1 -->
   <section id="page1">
     <div class="love-card">
       <span class="corner-sticker tl">🎀</span>
@@ -648,7 +230,6 @@
     </div>
   </section>
 
-  <!-- PAGE 2 -->
   <main id="page2">
     <div class="section-card hero-banner">
       <div class="hero-badge">🎂 Special Birthday Surprise For <span id="bestieNameBadge">Bestie</span> 💖</div>
@@ -694,4 +275,532 @@
             <span>📁</span>
             <span>Bestie's Video Folder</span>
           </div>
-        
+          <span class="count-badge" id="videosCountBadge">0 Videos</span>
+        </div>
+        <div id="folderBody">
+          <div class="videos-grid" id="videosGrid"></div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <button type="button" class="admin-fab" id="openAdminBtn">🔐 Admin Panel</button>
+
+  <div class="modal-overlay" id="passkeyModal">
+    <div class="modal-box small">
+      <button type="button" class="modal-close" id="closePasskeyModal">✕</button>
+      <div style="font-size: 2.5rem; margin-bottom: 6px;">🔐</div>
+      <h2 style="color: var(--pink-600); margin-bottom: 6px;">Admin Passkey</h2>
+      <p style="color: var(--muted); font-size: 0.92rem; margin-bottom: 16px; font-weight: 600;">
+        Enter your passkey to edit global website defaults
+      </p>
+      <div class="form-group">
+        <input type="password" class="form-control" id="passkeyInput" placeholder="Enter passkey..." />
+      </div>
+      <p id="passkeyError" style="color: #e62e73; font-size: 0.88rem; font-weight: 700; margin-bottom: 10px;"></p>
+      <button type="button" class="btn-primary" id="verifyPasskeyBtn" style="width: 100%;">Unlock Admin Panel ✨</button>
+    </div>
+  </div>
+
+  <div class="modal-overlay" id="adminModal">
+    <div class="modal-box">
+      <button type="button" class="modal-close" id="closeAdminModal">✕</button>
+      <h2 style="color: var(--pink-600);">⚙️ Admin Panel (Global Cloud Default)</h2>
+      <p style="font-size: 0.9rem; color: var(--muted); font-weight: 600; margin-top: 4px;">
+        Every edit & uploaded video is saved in Supabase so everyone opening the link sees it as default.
+      </p>
+      <div class="admin-tabs">
+        <button type="button" class="tab-btn active" data-tab="tabSettings">✨ Text & Stickers</button>
+        <button type="button" class="tab-btn" data-tab="tabWishes">💌 Wishes</button>
+        <button type="button" class="tab-btn" data-tab="tabVideos">📁 Video Folder</button>
+        <button type="button" class="tab-btn" data-tab="tabSecurity">🔐 Passkey</button>
+      </div>
+      <div class="tab-pane active" id="tabSettings">
+        <div class="form-group"><label>First Page Question</label><input type="text" class="form-control" id="editQuestionText" /></div>
+        <div class="form-group"><label>Shy No-Button Text</label><input type="text" class="form-control" id="editShyText" /></div>
+        <div class="form-group"><label>Bestie's Name</label><input type="text" class="form-control" id="editBestieName" /></div>
+        <div class="form-group"><label>Birthday Page Main Title</label><input type="text" class="form-control" id="editHeroTitle" /></div>
+        <div class="form-group"><label>Subtitle</label><input type="text" class="form-control" id="editHeroSubtitle" /></div>
+        <div class="form-group"><label>Main Birthday Letter</label><textarea class="form-control" id="editMainWish"></textarea></div>
+        <div class="form-group"><label>Stickers (space-separated)</label><input type="text" class="form-control" id="editStickers" /></div>
+        <button type="button" class="btn-primary" id="saveSettingsBtn">💾 Save Default Settings</button>
+      </div>
+      <div class="tab-pane" id="tabWishes">
+        <div class="admin-item-card" style="background: #fff0f6;">
+          <h3 style="color: var(--pink-600); margin-bottom: 10px;">➕ Add New Wish</h3>
+          <div class="form-group"><label>From / Title</label><input type="text" class="form-control" id="newWishAuthor" placeholder="e.g. Your Bestie Forever 💖" /></div>
+          <div class="form-group"><label>Sticker</label><input type="text" class="form-control" id="newWishSticker" value="❤️" /></div>
+          <div class="form-group"><label>Wish Message</label><textarea class="form-control" id="newWishText" placeholder="Write a sweet wish..."></textarea></div>
+          <button type="button" class="btn-primary" id="addWishBtn">Add Wish 💖</button>
+        </div>
+        <h3 style="color: var(--pink-600); margin: 18px 0 10px;">Saved Wishes</h3>
+        <div id="adminWishesList"></div>
+      </div>
+      <div class="tab-pane" id="tabVideos">
+        <div class="admin-item-card" style="background: #fff0f6;">
+          <h3 style="color: var(--pink-600); margin-bottom: 10px;">📤 Upload Video to Folder (Max 50MB/video)</h3>
+          <div class="form-group"><label>Video Title</label><input type="text" class="form-control" id="newVideoTitle" placeholder="e.g. Our Crazy Trip 🚗💖" /></div>
+          <div class="form-group"><label>Caption / Note</label><input type="text" class="form-control" id="newVideoCaption" placeholder="e.g. Never forget this day!" /></div>
+          <div class="form-group"><label>Choose Video File</label><input type="file" class="form-control" id="newVideoFile" accept="video/*" /></div>
+          <button type="button" class="btn-primary" id="uploadVideoBtn">Upload Video 🎬</button>
+        </div>
+        <h3 style="color: var(--pink-600); margin: 18px 0 10px;">Videos in Folder (Permanent until deleted)</h3>
+        <div id="adminVideosList"></div>
+      </div>
+      <div class="tab-pane" id="tabSecurity">
+        <div class="admin-item-card">
+          <h3 style="color: var(--pink-600); margin-bottom: 8px;">🔑 Edit or Remove Passkey</h3>
+          <p style="font-size: 0.92rem; color: var(--muted); font-weight: 600; margin-bottom: 14px;">
+            Current Status: <strong id="passkeyStatusLabel">Protected</strong>
+          </p>
+          <div class="form-group"><label>New Passkey</label><input type="text" class="form-control" id="newPasskeyInput" placeholder="Enter new passkey..." /></div>
+          <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+            <button type="button" class="btn-primary" id="savePasskeyBtn">Update Passkey 🔐</button>
+            <button type="button" class="btn-danger" id="removePasskeyBtn">Remove Passkey (Unlock Admin)</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const SUPABASE_URL = 'https://wqoejloochyceuvktire.supabase.co';
+    const SUPABASE_ANON_KEY = 'sb_publishable_0kscSvBHbdLvNfyYhRXF7A_I6VQZIBl';
+    let sb = null;
+    let activePasskey = '';
+    let siteData = {
+      passkeyRequired: true,
+      settings: {
+        questionText: 'Do you love me?',
+        shyText: 'the no button is shy',
+        bestieName: 'Bestie',
+        heroTitle: 'Happy Birthday, Bestie!',
+        heroSubtitle: 'You make every single day brighter, sweeter, and funnier 💖',
+        mainWish: 'To my favorite human in the whole universe: Thank you for all the late-night talks, endless laughter, and unconditional love. May this year bring you everything your heart desires! ❤️🎂✨',
+        stickers: ['❤️', '💖', '🎀', '🧸', '🌸', '✨', '🎂', '🦋', '🍓', '💌']
+      },
+      wishes: [],
+      videos: []
+    };
+
+    function escapeHtml(str) {
+      return String(str || '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&#39;');
+    }
+
+    function showToast(msg) {
+      const t = document.getElementById('toast');
+      t.textContent = msg;
+      t.classList.add('show');
+      setTimeout(() => t.classList.remove('show'), 3000);
+    }
+
+    function launchConfetti(count = 80) {
+      const canvas = document.getElementById('confettiCanvas');
+      const ctx = canvas.getContext('2d');
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+      const colors = ['#ff4d8d', '#ff85b3', '#ffd166', '#c77dff', '#72efdd', '#ffffff'];
+      const particles = Array.from({ length: count }, () => ({
+        x: Math.random() * canvas.width, y: Math.random() * -canvas.height * 0.4,
+        w: 7 + Math.random() * 7, h: 7 + Math.random() * 9,
+        vx: (Math.random() - 0.5) * 5, vy: 3 + Math.random() * 5,
+        rot: Math.random() * 360, vRot: (Math.random() - 0.5) * 10,
+        color: colors[Math.floor(Math.random() * colors.length)]
+      }));
+      let frames = 0;
+      function draw() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        particles.forEach((p) => {
+          p.x += p.vx; p.y += p.vy; p.rot += p.vRot;
+          ctx.save(); ctx.translate(p.x, p.y); ctx.rotate((p.rot * Math.PI) / 180);
+          ctx.fillStyle = p.color; ctx.fillRect(-p.w / 2, -p.h / 2, p.w, p.h); ctx.restore();
+        });
+        if (++frames < 180) requestAnimationFrame(draw);
+        else ctx.clearRect(0, 0, canvas.width, canvas.height);
+      }
+      draw();
+    }
+
+    let noTapCount = 0;
+    const yesBtn = document.getElementById('yesBtn');
+    const noBtn = document.getElementById('noBtn');
+    const shyHint = document.getElementById('shyHint');
+    const cuteHints = [
+      'Wait... are you sure? 🥺', 'Think again, bestie! 💕', 'Look at the Yes button growing! 👀',
+      'Why are you chasing No? 😢', 'the no button is shy 🙈', 'You know you love me! 💖', 'Almost out of chances... 🧸'
+    ];
+
+    noBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      noTapCount++;
+      if (noBtn.parentElement !== document.body) document.body.appendChild(noBtn);
+      noBtn.style.position = 'fixed';
+      const pad = 20;
+      const maxX = Math.max(pad, window.innerWidth - (noBtn.offsetWidth || 100) - pad);
+      const maxY = Math.max(pad, window.innerHeight - (noBtn.offsetHeight || 50) - pad);
+      noBtn.style.left = Math.floor(pad + Math.random() * (maxX - pad)) + 'px';
+      noBtn.style.top = Math.floor(pad + Math.random() * (maxY - pad)) + 'px';
+
+      if (noTapCount < 8) {
+        yesBtn.style.fontSize = (1.25 + noTapCount * 0.35) + 'rem';
+        yesBtn.style.padding = `${14 + noTapCount * 7}px ${34 + noTapCount * 14}px`;
+        shyHint.textContent = cuteHints[noTapCount - 1] || 'the no button is shy 🙈';
+      } else {
+        noBtn.style.display = 'none';
+        if (yesBtn.parentElement !== document.body) document.body.appendChild(yesBtn);
+        yesBtn.classList.add('fullscreen-yes');
+        const shyTxt = siteData.settings.shyText || 'the no button is shy';
+        yesBtn.innerHTML = `<span>YES! ❤️💖</span><span class="fullscreen-subtext">${escapeHtml(shyTxt)} 🙈</span><span class="fullscreen-tap">Tap anywhere to open your birthday surprise ✨</span>`;
+      }
+    });
+
+    yesBtn.addEventListener('click', () => {
+      yesBtn.style.display = 'none';
+      noBtn.style.display = 'none';
+      document.getElementById('page1').style.display = 'none';
+      document.getElementById('page2').style.display = 'block';
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      launchConfetti(110);
+    });
+
+    document.getElementById('folderToggle').addEventListener('click', () => {
+      const body = document.getElementById('folderBody');
+      body.style.display = body.style.display === 'none' ? 'block' : 'none';
+    });
+
+    const targetBirthday = new Date(2027, 0, 30, 0, 0, 0, 0).getTime();
+    function updateCountdown() {
+      const diff = targetBirthday - Date.now();
+      if (diff <= 0) {
+        document.getElementById('timerGrid').style.display = 'none';
+        document.getElementById('birthdayLiveMsg').style.display = 'block';
+        return;
+      }
+      document.getElementById('cdDays').textContent = String(Math.floor(diff / 86400000)).padStart(2, '0');
+      document.getElementById('cdHours').textContent = String(Math.floor((diff / 3600000) % 24)).padStart(2, '0');
+      document.getElementById('cdMins').textContent = String(Math.floor((diff / 60000) % 60)).padStart(2, '0');
+      document.getElementById('cdSecs').textContent = String(Math.floor((diff / 1000) % 60)).padStart(2, '0');
+    }
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
+
+    (function initFloatBg() {
+      const container = document.getElementById('floatingBg');
+      const icons = ['❤️', '💖', '💕', '✨', '🌸', '🎀', '🧸', '💗'];
+      for (let i = 0; i < 22; i++) {
+        const el = document.createElement('div');
+        el.className = 'float-item';
+        el.textContent = icons[i % icons.length];
+        el.style.left = Math.random() * 96 + 'vw';
+        el.style.fontSize = (16 + Math.random() * 18) + 'px';
+        el.style.animationDuration = (9 + Math.random() * 9) + 's';
+        el.style.animationDelay = (-Math.random() * 12) + 's';
+        container.appendChild(el);
+      }
+    })();
+
+    function renderSite() {
+      const s = siteData.settings || {};
+      document.getElementById('questionText').textContent = s.questionText || 'Do you love me?';
+      document.getElementById('bestieNameBadge').textContent = s.bestieName || 'Bestie';
+      document.getElementById('heroTitle').textContent = s.heroTitle || 'Happy Birthday!';
+      document.getElementById('heroSubtitle').textContent = s.heroSubtitle || '';
+      document.getElementById('mainWishBox').textContent = s.mainWish || '';
+
+      const parade = document.getElementById('stickerParade');
+      parade.innerHTML = '';
+      (s.stickers || ['❤️', '💖']).forEach((st) => {
+        const span = document.createElement('span');
+        span.className = 'sticker-pill';
+        span.textContent = st;
+        span.onclick = () => { launchConfetti(28); showToast(st + ' Sending extra love! ' + st); };
+        parade.appendChild(span);
+      });
+
+      const wishes = siteData.wishes || [];
+      document.getElementById('wishesCountBadge').textContent = wishes.length + (wishes.length === 1 ? ' Wish' : ' Wishes');
+      document.getElementById('wishesGrid').innerHTML = wishes.length
+        ? wishes.map((w) => `<div class="wish-card"><span class="wish-sticker">${escapeHtml(w.sticker || '❤️')}</span><div class="wish-text">${escapeHtml(w.text)}</div><div class="wish-author">— ${escapeHtml(w.author)}</div></div>`).join('')
+        : `<div class="empty-state">No wishes yet — add one in the Admin Panel! 💌</div>`;
+
+      const videos = siteData.videos || [];
+      document.getElementById('videosCountBadge').textContent = videos.length + (videos.length === 1 ? ' Video' : ' Videos');
+      document.getElementById('videosGrid').innerHTML = videos.length
+        ? videos.map((v) => `<div class="video-card"><video controls playsinline preload="metadata" src="${escapeHtml(v.url)}"></video><div class="video-info"><div class="video-title">${escapeHtml(v.sticker || '🎬')} ${escapeHtml(v.title)}</div>${v.caption ? `<div class="video-caption">${escapeHtml(v.caption)}</div>` : ''}</div></div>`).join('')
+        : `<div class="empty-state">📁 This video folder is empty. Open Admin Panel to upload cute videos! 🎬💖</div>`;
+
+      if (typeof renderAdminLists === 'function') renderAdminLists();
+    }
+                                  </script><script>
+    const passkeyModal = document.getElementById('passkeyModal');
+    const adminModal = document.getElementById('adminModal');
+
+    document.getElementById('openAdminBtn').addEventListener('click', async () => {
+      if (!sb) await initSupabaseAndLoad();
+      if (!sb) return showToast('Still connecting to Supabase... check internet and try again 🌐');
+      if (!siteData.passkeyRequired) {
+        openAdminModal();
+      } else {
+        document.getElementById('passkeyInput').value = '';
+        document.getElementById('passkeyError').textContent = '';
+        passkeyModal.classList.add('open');
+      }
+    });
+
+    document.getElementById('closePasskeyModal').addEventListener('click', () => passkeyModal.classList.remove('open'));
+    document.getElementById('closeAdminModal').addEventListener('click', () => adminModal.classList.remove('open'));
+
+    async function attemptUnlock() {
+      if (!sb) return showToast('Database not connected yet 🌐');
+      const entered = document.getElementById('passkeyInput').value;
+      const { data: ok, error } = await sb.rpc('verify_admin_passkey', { p_passkey: entered });
+      if (error || !ok) {
+        document.getElementById('passkeyError').textContent = error ? 'Connection error: ' + error.message : 'Incorrect passkey! 🥺';
+        return;
+      }
+      activePasskey = entered;
+      passkeyModal.classList.remove('open');
+      openAdminModal();
+    }
+
+    document.getElementById('verifyPasskeyBtn').addEventListener('click', attemptUnlock);
+    document.getElementById('passkeyInput').addEventListener('keydown', (e) => { if (e.key === 'Enter') attemptUnlock(); });
+
+    function openAdminModal() {
+      const s = siteData.settings || {};
+      document.getElementById('editQuestionText').value = s.questionText || '';
+      document.getElementById('editShyText').value = s.shyText || '';
+      document.getElementById('editBestieName').value = s.bestieName || '';
+      document.getElementById('editHeroTitle').value = s.heroTitle || '';
+      document.getElementById('editHeroSubtitle').value = s.heroSubtitle || '';
+      document.getElementById('editMainWish').value = s.mainWish || '';
+      document.getElementById('editStickers').value = (s.stickers || []).join(' ');
+      document.getElementById('passkeyStatusLabel').textContent = siteData.passkeyRequired ? '🔒 Protected by Passkey' : '🔓 No Passkey (Unlocked)';
+      renderAdminLists();
+      adminModal.classList.add('open');
+    }
+
+    document.querySelectorAll('.tab-btn').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.tab-btn').forEach((b) => b.classList.remove('active'));
+        document.querySelectorAll('.tab-pane').forEach((p) => p.classList.remove('active'));
+        btn.classList.add('active');
+        document.getElementById(btn.dataset.tab).classList.add('active');
+      });
+    });
+
+    document.getElementById('saveSettingsBtn').addEventListener('click', async () => {
+      const stickersArr = document.getElementById('editStickers').value.trim().split(/\s+/).filter(Boolean);
+      const payload = {
+        questionText: document.getElementById('editQuestionText').value.trim(),
+        shyText: document.getElementById('editShyText').value.trim(),
+        bestieName: document.getElementById('editBestieName').value.trim(),
+        heroTitle: document.getElementById('editHeroTitle').value.trim(),
+        heroSubtitle: document.getElementById('editHeroSubtitle').value.trim(),
+        mainWish: document.getElementById('editMainWish').value,
+        stickers: stickersArr.length ? stickersArr : ['❤️']
+      };
+      const { data, error } = await sb.rpc('admin_update_settings', { p_passkey: activePasskey, p_settings: payload });
+      if (error) return showToast('Save failed: ' + error.message);
+      siteData.settings = data;
+      renderSite();
+      showToast('Default settings saved for everyone! 💖');
+    });
+
+    document.getElementById('addWishBtn').addEventListener('click', async () => {
+      const author = document.getElementById('newWishAuthor').value.trim() || 'From Me 💖';
+      const sticker = document.getElementById('newWishSticker').value.trim() || '❤️';
+      const text = document.getElementById('newWishText').value.trim();
+      if (!text) return showToast('Write a wish first!');
+      const updated = [{ id: 'w_' + Date.now(), author, sticker, text }, ...(siteData.wishes || [])];
+      const { data, error } = await sb.rpc('admin_update_wishes', { p_passkey: activePasskey, p_wishes: updated });
+      if (error) return showToast('Failed: ' + error.message);
+      siteData.wishes = data;
+      document.getElementById('newWishText').value = '';
+      document.getElementById('newWishAuthor').value = '';
+      renderSite();
+      showToast('Wish saved permanently! 🌸');
+    });
+
+    document.getElementById('uploadVideoBtn').addEventListener('click', async () => {
+      const btn = document.getElementById('uploadVideoBtn');
+      const fileInput = document.getElementById('newVideoFile');
+      const file = fileInput.files[0];
+      if (!file) return showToast('Pick a video file first! 🎬');
+      if (file.size > 50 * 1024 * 1024) return showToast('Free plan max is 50MB per video! Compress slightly and retry.');
+
+      const title = document.getElementById('newVideoTitle').value.trim() || 'Cute Memory 💖';
+      const caption = document.getElementById('newVideoCaption').value.trim();
+      const ext = file.name.split('.').pop() || 'mp4';
+      const filePath = `vid_${Date.now()}_${Math.random().toString(36).slice(2, 7)}.${ext}`;
+
+      btn.disabled = true;
+      btn.textContent = 'Uploading video... please wait 🎬✨';
+
+      const { error: upErr } = await sb.storage.from('videos').upload(filePath, file, { contentType: file.type || 'video/mp4', upsert: false });
+      if (upErr) {
+        btn.disabled = false;
+        btn.textContent = 'Upload Video 🎬';
+        return showToast('Upload failed: ' + upErr.message);
+      }
+
+      const { data: pub } = sb.storage.from('videos').getPublicUrl(filePath);
+      const newVid = { id: 'v_' + Date.now(), title, caption, sticker: '🎬', path: filePath, url: pub.publicUrl, createdAt: new Date().toISOString() };
+      const updatedVideos = [newVid, ...(siteData.videos || [])];
+      const { data, error: dbErr } = await sb.rpc('admin_update_videos', { p_passkey: activePasskey, p_videos: updatedVideos });
+
+      btn.disabled = false;
+      btn.textContent = 'Upload Video 🎬';
+      if (dbErr) return showToast('Database save failed: ' + dbErr.message);
+      siteData.videos = data;
+      fileInput.value = '';
+      document.getElementById('newVideoTitle').value = '';
+      document.getElementById('newVideoCaption').value = '';
+      renderSite();
+      showToast('Video uploaded permanently! 🎬💖');
+    });
+
+    document.getElementById('savePasskeyBtn').addEventListener('click', async () => {
+      const newPk = document.getElementById('newPasskeyInput').value.trim();
+      if (!newPk) return showToast('Enter a new passkey or click Remove Passkey');
+      const { error } = await sb.rpc('admin_update_passkey', { p_passkey: activePasskey, p_new_passkey: newPk });
+      if (error) return showToast('Error: ' + error.message);
+      activePasskey = newPk;
+      siteData.passkeyRequired = true;
+      document.getElementById('newPasskeyInput').value = '';
+      document.getElementById('passkeyStatusLabel').textContent = '🔒 Protected by Passkey';
+      showToast('Passkey updated! 🔐');
+    });
+
+    document.getElementById('removePasskeyBtn').addEventListener('click', async () => {
+      if (!confirm('Remove passkey lock? Anyone clicking Admin Panel can edit until you set a passkey again.')) return;
+      const { error } = await sb.rpc('admin_update_passkey', { p_passkey: activePasskey, p_new_passkey: '' });
+      if (error) return showToast('Error: ' + error.message);
+      activePasskey = '';
+      siteData.passkeyRequired = false;
+      document.getElementById('passkeyStatusLabel').textContent = '🔓 No Passkey (Unlocked)';
+      showToast('Passkey removed! 🔓');
+    });
+
+    function renderAdminLists() {
+      const wishes = siteData.wishes || [];
+      const adminWishes = document.getElementById('adminWishesList');
+      adminWishes.innerHTML = wishes.length
+        ? wishes.map((w) => `
+          <div class="admin-item-card" data-wish-id="${escapeHtml(w.id)}">
+            <div class="form-group">
+              <label>Author & Sticker</label>
+              <div style="display:flex; gap:8px;">
+                <input type="text" class="form-control edit-w-author" value="${escapeHtml(w.author)}" />
+                <input type="text" class="form-control edit-w-sticker" style="width:70px; text-align:center;" value="${escapeHtml(w.sticker)}" />
+              </div>
+            </div>
+            <div class="form-group"><label>Wish Message</label><textarea class="form-control edit-w-text">${escapeHtml(w.text)}</textarea></div>
+            <div class="admin-item-actions">
+              <button type="button" class="btn-secondary save-wish-btn">💾 Save Edit</button>
+              <button type="button" class="btn-danger delete-wish-btn">🗑️ Delete</button>
+            </div>
+          </div>`).join('')
+        : `<p style="color: var(--muted);">No wishes yet.</p>`;
+
+      adminWishes.querySelectorAll('.save-wish-btn').forEach((btn) => {
+        btn.onclick = async () => {
+          const card = btn.closest('.admin-item-card');
+          const id = card.dataset.wishId;
+          const updated = wishes.map((w) => w.id === id ? { id, author: card.querySelector('.edit-w-author').value.trim(), sticker: card.querySelector('.edit-w-sticker').value.trim(), text: card.querySelector('.edit-w-text').value.trim() } : w);
+          const { data, error } = await sb.rpc('admin_update_wishes', { p_passkey: activePasskey, p_wishes: updated });
+          if (error) return showToast('Save failed ❌');
+          siteData.wishes = data;
+          renderSite();
+          showToast('Wish updated permanently! ✨');
+        };
+      });
+
+      adminWishes.querySelectorAll('.delete-wish-btn').forEach((btn) => {
+        btn.onclick = async () => {
+          if (!confirm('Delete this wish permanently?')) return;
+          const id = btn.closest('.admin-item-card').dataset.wishId;
+          const updated = wishes.filter((w) => w.id !== id);
+          const { data, error } = await sb.rpc('admin_update_wishes', { p_passkey: activePasskey, p_wishes: updated });
+          if (error) return showToast('Delete failed ❌');
+          siteData.wishes = data;
+          renderSite();
+          showToast('Wish deleted 🗑️');
+        };
+      });
+
+      const videos = siteData.videos || [];
+      const adminVideos = document.getElementById('adminVideosList');
+      adminVideos.innerHTML = videos.length
+        ? videos.map((v) => `
+          <div class="admin-item-card" data-video-id="${escapeHtml(v.id)}">
+            <div class="form-group"><label>Video Title</label><input type="text" class="form-control edit-v-title" value="${escapeHtml(v.title)}" /></div>
+            <div class="form-group"><label>Caption</label><input type="text" class="form-control edit-v-caption" value="${escapeHtml(v.caption)}" /></div>
+            <div class="admin-item-actions">
+              <button type="button" class="btn-secondary save-video-btn">💾 Save Edit</button>
+              <button type="button" class="btn-danger delete-video-btn">🗑️ Remove Video</button>
+            </div>
+          </div>`).join('')
+        : `<p style="color: var(--muted);">No videos uploaded yet.</p>`;
+
+      adminVideos.querySelectorAll('.save-video-btn').forEach((btn) => {
+        btn.onclick = async () => {
+          const card = btn.closest('.admin-item-card');
+          const id = card.dataset.videoId;
+          const updated = videos.map((v) => v.id === id ? { ...v, title: card.querySelector('.edit-v-title').value.trim(), caption: card.querySelector('.edit-v-caption').value.trim() } : v);
+          const { data, error } = await sb.rpc('admin_update_videos', { p_passkey: activePasskey, p_videos: updated });
+          if (error) return showToast('Save failed ❌');
+          siteData.videos = data;
+          renderSite();
+          showToast('Video details saved! 🎬');
+        };
+      });
+
+      adminVideos.querySelectorAll('.delete-video-btn').forEach((btn) => {
+        btn.onclick = async () => {
+          if (!confirm('Remove this video permanently from the folder?')) return;
+          const id = btn.closest('.admin-item-card').dataset.videoId;
+          const target = videos.find((v) => v.id === id);
+          if (target && target.path) await sb.storage.from('videos').remove([target.path]);
+          const updated = videos.filter((v) => v.id !== id);
+          const { data, error } = await sb.rpc('admin_update_videos', { p_passkey: activePasskey, p_videos: updated });
+          if (error) return showToast('Delete failed ❌');
+          siteData.videos = data;
+          renderSite();
+          showToast('Video removed permanently 🗑️');
+        };
+      });
+    }
+
+    function loadBackupSupabaseScript() {
+      return new Promise((resolve) => {
+        if (window.supabase) return resolve(true);
+        const s = document.createElement('script');
+        s.src = 'https://unpkg.com/@supabase/supabase-js@2';
+        s.onload = () => resolve(Boolean(window.supabase));
+        s.onerror = () => resolve(false);
+        document.head.appendChild(s);
+      });
+    }
+
+    async function initSupabaseAndLoad() {
+      try {
+        if (!window.supabase) await loadBackupSupabaseScript();
+        if (!window.supabase) return showToast('Could not load database library (check internet) 🌐');
+        sb = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+        const { data, error } = await sb.rpc('get_site_data');
+        if (error) return showToast('Database connection error: ' + error.message);
+        if (data) {
+          siteData = data;
+          renderSite();
+        }
+      } catch (err) {
+        console.error(err);
+      }
+    }
+
+    renderSite();
+    initSupabaseAndLoad();
+  </script>
+</body>
+</html>
